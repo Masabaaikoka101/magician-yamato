@@ -1556,7 +1556,33 @@ body.modal-open {
 
   .flow-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
+  }
+
+  .flow-step {
+    display: flex;
+    text-align: left;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .flow-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .flow-step-num {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .flow-step-content {
+    flex: 1;
   }
 
   .cta-contact-methods {
@@ -1566,6 +1592,38 @@ body.modal-open {
 
   .form-container {
     padding: 32px 24px;
+  }
+
+  /* フォームモーダルを全画面表示＆スクロール可能に */
+  .contact-modal-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+  
+  .contact-modal-content {
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-modal-overlay.active .contact-modal-content {
+    transform: translateY(0);
+  }
+
+  .contact-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 40px; /* スクロール下部の余白 */
+  }
+
+  .form-container {
+    border: none;
+    box-shadow: none;
+    padding: 24px 20px;
   }
 
   .page-hero h1 {
