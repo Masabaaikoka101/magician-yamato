@@ -284,7 +284,7 @@ function renderContactModal() {
                     </div>
 
                     <p class="form-note" style="margin-top: 20px;">
-                        ※ お問い合わせは、お電話・メール・LINEでも承っております。
+                        ※ お問い合わせは、お電話（080-8733-0621）・メール・LINEでも承っております。
                     </p>
                 </div>
 
