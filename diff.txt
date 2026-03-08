@@ -1,0 +1,216 @@
+﻿diff --git a/bar.html b/bar.html
+index 38bb6d5..28ca22d 100644
+--- a/bar.html
++++ b/bar.html
+@@ -106,15 +106,21 @@
+         <div class="container">
+             <h2 class="section-title" style="font-size: 1.6rem;">縺比ｺ育ｴ・・縺雁撫縺・粋繧上○</h2>
+             <p>縺疲擂蠎励・髫帙・莠句燕莠育ｴ・ｒ縺雁匡繧√＞縺溘＠縺ｾ縺吶・/p>
+-            <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">莠育ｴ・・縺雁撫縺・粋繧上○</button>
++            <div class="cta-dual-buttons">
++                <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">莠育ｴ・・縺雁撫縺・粋繧上○</button>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line btn-lg">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ莠育ｴ・☆繧・+                </a>
++            </div>
+             <div class="cta-contact-methods">
+                 <div class="cta-method">
+                     <strong>繝｡繝ｼ繝ｫ</strong>
+                     yamatouuu06@gmail.com
+                 </div>
+                 <div class="cta-method">
+-                    <strong>髮ｻ隧ｱ繝ｻLINE</strong>
+-                    080-8733-0621<br>
++                    <strong>髮ｻ隧ｱ</strong>
++                    <a href="tel:08087330621" class="tel-link">080-8733-0621</a><br>
+                     縺頑ｰ苓ｻｽ縺ｫ縺ｩ縺・◇
+                 </div>
+             </div>
+diff --git a/contact.html b/contact.html
+index 36d1374..6de4305 100644
+--- a/contact.html
++++ b/contact.html
+@@ -45,9 +45,13 @@
+                 縺雁撫縺・粋繧上○繧・♀隕狗ｩ阪ｂ繧翫・縲∽ｻ･荳九・繝懊ち繝ｳ縺九ｉ繝輔か繝ｼ繝繧帝幕縺・※縺泌・蜉帙￥縺縺輔＞縲・br>
+                 ・医＃逶ｸ隲・・辟｡譁吶〒縺吶ゅ♀豌苓ｻｽ縺ｫ縺雁撫縺・粋繧上○縺上□縺輔＞・・             </p>
+-            <button type="button" class="btn btn-primary" onclick="openContactModal()">
+-                縺雁撫縺・粋繧上○繝輔か繝ｼ繝繧帝幕縺・-            </button>
++            <div class="cta-dual-buttons">
++                <button type="button" class="btn btn-primary" onclick="openContactModal()">繝輔か繝ｼ繝繧帝幕縺・/button>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ逶ｸ隲・☆繧・+                </a>
++            </div>
+         </div>
+     </section>
+ 
+@@ -68,9 +72,9 @@
+                 </div>
+                 <div class="reason-card">
+                     <div class="reason-number" style="font-size: 2rem;">到</div>
+-                    <h3>髮ｻ隧ｱ繝ｻLINE</h3>
+-                    <p><a href="tel:08087330621"
+-                            style="color: var(--color-accent); font-weight: 600;">080-8733-0621</a><br>縺頑ｰ苓ｻｽ縺ｫ縺雁撫縺・粋繧上○縺上□縺輔＞
++                    <h3>髮ｻ隧ｱ</h3>
++                    <p><a href="tel:08087330621" class="tel-link"
++                            style="font-weight: 600;">080-8733-0621</a><br>縺頑ｰ苓ｻｽ縺ｫ縺雁撫縺・粋繧上○縺上□縺輔＞
+                     </p>
+                 </div>
+             </div>
+diff --git a/event.html b/event.html
+index 49c707c..43d56f3 100644
+--- a/event.html
++++ b/event.html
+@@ -130,7 +130,13 @@
+         <div class="container">
+             <h2 class="section-title" style="font-size: 1.6rem;">縺ｾ縺壹・縺頑ｰ苓ｻｽ縺ｫ縺皮嶌隲・￥縺縺輔＞</h2>
+             <p>繧､繝吶Φ繝医・隧ｳ邏ｰ縺梧ｱｺ縺ｾ縺｣縺ｦ縺・↑縺上※繧ょ､ｧ荳亥､ｫ縺ｧ縺吶ゅ♀隕狗ｩ阪ｂ繧顔┌譁吶・/p>
+-            <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++            <div class="cta-dual-buttons">
++                <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line btn-lg">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ逶ｸ隲・☆繧・+                </a>
++            </div>
+         </div>
+     </section>
+ 
+diff --git a/index.html b/index.html
+index f5a0a09..7509343 100644
+--- a/index.html
++++ b/index.html
+@@ -44,6 +44,10 @@
+             <div class="hero-actions">
+                 <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">縺ｾ縺壹・辟｡譁吶〒逶ｸ隲・☆繧・/button>
+                 <a href="#service" class="btn btn-outline btn-lg">繧ｵ繝ｼ繝薙せ繧定ｦ九ｋ</a>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line btn-lg">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ逶ｸ隲・☆繧・+                </a>
+             </div>
+         </div>
+     </section>
+@@ -250,15 +254,21 @@
+                 <h2 class="section-title">縺ｾ縺壹・縺頑ｰ苓ｻｽ縺ｫ縺皮嶌隲・￥縺縺輔＞</h2>
+             </div>
+             <p>縺願ｦ狗ｩ阪ｂ繧顔┌譁吶ゅう繝吶Φ繝医・隧ｳ邏ｰ縺梧ｱｺ縺ｾ縺｣縺ｦ縺・↑縺上※繧ょ､ｧ荳亥､ｫ縺ｧ縺吶・/p>
+-            <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++            <div class="cta-dual-buttons">
++                <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line btn-lg">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ逶ｸ隲・☆繧・+                </a>
++            </div>
+             <div class="cta-contact-methods">
+                 <div class="cta-method">
+                     <strong>繝｡繝ｼ繝ｫ</strong>
+                     yamatouuu06@gmail.com
+                 </div>
+                 <div class="cta-method">
+-                    <strong>髮ｻ隧ｱ繝ｻLINE</strong>
+-                    080-8733-0621<br>
++                    <strong>髮ｻ隧ｱ</strong>
++                    <a href="tel:08087330621" class="tel-link">080-8733-0621</a><br>
+                     縺頑ｰ苓ｻｽ縺ｫ縺ｩ縺・◇
+                 </div>
+             </div>
+diff --git a/js/components.js b/js/components.js
+index b817413..1a981af 100644
+--- a/js/components.js
++++ b/js/components.js
+@@ -129,7 +129,12 @@ function renderFooter() {
+ function renderStickyCta() {
+   const ctaHtml = `
+     <div class="sticky-cta" id="sticky-cta">
+-      <button type="button" class="btn btn-primary" onclick="openContactModal()">縺ｾ縺壹・辟｡譁吶〒逶ｸ隲・☆繧・/button>
++      <div style="display: flex; gap: 8px; justify-content: center;">
++        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">繝輔か繝ｼ繝縺ｧ逶ｸ隲・/button>
++        <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="padding: 12px 20px; font-size: 0.9rem;">
++            <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 6px; width: 18px; height: 18px;">LINE
++        </a>
++      </div>
+     </div>
+   `;
+   document.body.insertAdjacentHTML('beforeend', ctaHtml);
+@@ -283,8 +288,8 @@ function renderContactModal() {
+                         <button type="button" class="btn btn-primary" id="btn-submit">騾∽ｿ｡縺吶ｋ</button>
+                     </div>
+ 
+-                    <p class="form-note" style="margin-top: 20px;">
+-                        窶ｻ 縺雁撫縺・粋繧上○縺ｯ縲√♀髮ｻ隧ｱ・・80-8733-0621・峨・繝｡繝ｼ繝ｫ繝ｻLINE縺ｧ繧よ価縺｣縺ｦ縺翫ｊ縺ｾ縺吶・+                    <p class="form-note">
++                        窶ｻ 縺雁撫縺・粋繧上○縺ｯ縲√♀髮ｻ隧ｱ・・a href="tel:08087330621" class="tel-link">080-8733-0621</a>・峨・繝｡繝ｼ繝ｫ繝ｻ<a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" style="color: #06C755; font-weight: bold; text-decoration: underline;">LINE</a>縺ｧ繧よ価縺｣縺ｦ縺翫ｊ縺ｾ縺吶・                     </p>
+                 </div>
+ 
+diff --git a/restaurant.html b/restaurant.html
+index 368cc6a..19fa938 100644
+--- a/restaurant.html
++++ b/restaurant.html
+@@ -102,7 +102,13 @@
+         <div class="container">
+             <h2 class="section-title" style="font-size: 1.6rem;">蟆主・繧偵＃讀懆ｨ弱・蠎苓・繧ｪ繝ｼ繝翫・讒倥∈</h2>
+             <p>縺ｾ縺壹・縺頑ｰ苓ｻｽ縺ｫ縺皮嶌隲・￥縺縺輔＞縲ょｺ苓・縺ｮ髮ｰ蝗ｲ豌励ｄ隱ｲ鬘後↓蜷医ｏ縺帙◆繝励Λ繝ｳ繧偵＃謠先｡医＠縺ｾ縺吶・/p>
+-            <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++            <div class="cta-dual-buttons">
++                <button type="button" class="btn btn-primary btn-lg" onclick="openContactModal()">辟｡譁吶〒逶ｸ隲・☆繧・/button>
++                <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank"
++                    rel="noopener noreferrer" class="btn btn-line btn-lg">
++                    <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 8px;">LINE縺ｧ逶ｸ隲・☆繧・+                </a>
++            </div>
+         </div>
+     </section>
+ 
+diff --git a/style.css b/style.css
+index 3a779b8..9378b0c 100644
+--- a/style.css
++++ b/style.css
+@@ -792,6 +792,30 @@ ol {
+   margin-bottom: 32px;
+ }
+ 
++.cta-dual-buttons {
++  display: flex;
++  justify-content: center;
++  gap: 16px;
++  flex-wrap: wrap;
++}
++
++.btn-line {
++  background-color: #06C755;
++  color: #fff;
++}
++
++.btn-line:hover {
++  background-color: #05b04c;
++  transform: translateY(-1px);
++  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
++}
++
++.btn-line img {
++  width: 20px;
++  height: 20px;
++  vertical-align: middle;
++}
++
+ .cta-contact-methods {
+   display: flex;
+   justify-content: center;
+@@ -936,6 +960,20 @@ ol {
+   margin-top: 24px;
+ }
+ 
++/* Tel Links */
++.tel-link {
++  color: var(--color-accent);
++  font-weight: 600;
++  text-decoration: underline;
++  text-underline-offset: 4px;
++  transition: opacity 0.3s ease, color 0.3s ease;
++}
++
++.tel-link:hover {
++  opacity: 0.8;
++  color: var(--color-text);
++}
++
+ /* ======================================================
+    SHOP INFO TABLE (BAR Page)
+    ====================================================== */

@@ -129,7 +129,12 @@ function renderFooter() {
 function renderStickyCta() {
   const ctaHtml = `
     <div class="sticky-cta" id="sticky-cta">
-      <button type="button" class="btn btn-primary" onclick="openContactModal()">まずは無料で相談する</button>
+      <div style="display: flex; gap: 8px; justify-content: center;">
+        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">フォームで相談</button>
+        <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="padding: 12px 20px; font-size: 0.9rem;">
+            <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 6px; width: 18px; height: 18px;">LINE
+        </a>
+      </div>
     </div>
   `;
   document.body.insertAdjacentHTML('beforeend', ctaHtml);
@@ -283,8 +288,8 @@ function renderContactModal() {
                         <button type="button" class="btn btn-primary" id="btn-submit">送信する</button>
                     </div>
 
-                    <p class="form-note" style="margin-top: 20px;">
-                        ※ お問い合わせは、お電話（080-8733-0621）・メール・LINEでも承っております。
+                    <p class="form-note">
+                        ※ お問い合わせは、お電話（<a href="tel:08087330621" class="tel-link">080-8733-0621</a>）・メール・<a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" style="color: #06C755; font-weight: bold; text-decoration: underline;">LINE</a>でも承っております。
                     </p>
                 </div>
 

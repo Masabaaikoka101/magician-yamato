@@ -792,6 +792,30 @@ ol {
   margin-bottom: 32px;
 }
 
+.cta-dual-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-line {
+  background-color: #06C755;
+  color: #fff;
+}
+
+.btn-line:hover {
+  background-color: #05b04c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
+}
+
+.btn-line img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
 .cta-contact-methods {
   display: flex;
   justify-content: center;
@@ -934,6 +958,20 @@ ol {
   color: var(--color-text-tertiary);
   font-size: 0.85rem;
   margin-top: 24px;
+}
+
+/* Tel Links */
+.tel-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.tel-link:hover {
+  opacity: 0.8;
+  color: var(--color-text);
 }
 
 /* ======================================================
