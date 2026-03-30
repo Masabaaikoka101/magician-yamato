@@ -50,6 +50,10 @@ function initContactForm() {
             selectedService = e.target.value;
             const btnNext1Local = document.getElementById('btn-next-1');
             if (btnNext1Local) btnNext1Local.disabled = false;
+
+            // 選択後すぐにStep2へ自動遷移
+            const btnNext1 = document.getElementById('btn-next-1');
+            if (btnNext1) btnNext1.click();
         }
     });
 
@@ -122,8 +126,8 @@ function initContactForm() {
 
             // サービス別データ
             if (selectedService === '余興・イベント') {
-                formData.plan = document.getElementById('plan')?.value || '';
-                formData.situation = document.getElementById('situation')?.value || '';
+                formData.plan = document.querySelector('input[name="plan"]:checked')?.value || document.getElementById('plan')?.value || '';
+                formData.situation = document.querySelector('input[name="situation"]:checked')?.value || document.getElementById('situation')?.value || '';
                 formData.budget = document.getElementById('budget')?.value.trim() || '';
                 formData.date = document.getElementById('date')?.value.trim() || '';
                 formData.guests = document.getElementById('guests')?.value.trim() || '';

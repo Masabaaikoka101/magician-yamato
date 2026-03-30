@@ -130,7 +130,7 @@ function renderStickyCta() {
   const ctaHtml = `
     <div class="sticky-cta" id="sticky-cta">
       <div style="display: flex; gap: 8px; justify-content: center;">
-        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">フォームで相談</button>
+        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">かんたん相談</button>
         <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="padding: 12px 20px; font-size: 0.9rem;">
             <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 6px; width: 18px; height: 18px;">LINE
         </a>
@@ -191,29 +191,53 @@ function renderContactModal() {
                     <!-- 余興・イベント用フィールド -->
                     <div id="fields-event" style="display:none;">
                         <div class="form-group">
-                            <label>プラン</label>
-                            <select id="plan">
-                                <option value="">選択してください</option>
-                                <option value="テーブルマジック">テーブルマジック（着席・2〜10名）</option>
-                                <option value="ホッピング">ホッピング（回遊・20〜100名超）</option>
-                                <option value="サロンマジック">サロンマジック（中規模・10〜40名）</option>
-                                <option value="ステージマジック">ステージマジック（大規模・50〜200名超）</option>
-                                <option value="未定・相談したい">未定・相談したい</option>
-                            </select>
+                            <label>プラン <span class="label-optional">任意</span></label>
+                            <div class="radio-button-group" id="plan">
+                                <label class="radio-button-label">
+                                    <input type="radio" name="plan" value="テーブルマジック">
+                                    <span class="radio-button-text">テーブル</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="plan" value="ホッピング">
+                                    <span class="radio-button-text">ホッピング</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="plan" value="サロンマジック">
+                                    <span class="radio-button-text">サロン</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="plan" value="ステージマジック">
+                                    <span class="radio-button-text">ステージ</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="plan" value="未定・相談">
+                                    <span class="radio-button-text">相談して決める</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>シチュエーション</label>
-                            <select id="situation">
-                                <option value="">選択してください</option>
-                                <option value="企業イベント">企業イベント</option>
-                                <option value="結婚式">結婚式</option>
-                                <option value="パーティー">パーティー</option>
-                                <option value="懇親会">懇親会</option>
-                                <option value="その他">その他</option>
-                            </select>
+                            <label>シチュエーション <span class="label-optional">任意</span></label>
+                            <div class="radio-button-group" id="situation">
+                                <label class="radio-button-label">
+                                    <input type="radio" name="situation" value="企業イベント">
+                                    <span class="radio-button-text">企業・団体</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="situation" value="結婚式">
+                                    <span class="radio-button-text">結婚式</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="situation" value="パーティー">
+                                    <span class="radio-button-text">パーティー</span>
+                                </label>
+                                <label class="radio-button-label">
+                                    <input type="radio" name="situation" value="その他">
+                                    <span class="radio-button-text">その他</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>出演料・ご予算</label>
+                            <label>出演料・ご予算 <span class="label-optional">任意</span></label>
                             <input type="text" id="budget" placeholder="例: 予算5万円、相談して決めたい など">
                         </div>
                     </div>
@@ -221,11 +245,11 @@ function renderContactModal() {
                     <!-- マジックBAR用フィールド -->
                     <div id="fields-bar" style="display:none;">
                         <div class="form-group">
-                            <label>ご希望日時</label>
+                            <label>ご希望日時 <span class="label-optional">任意</span></label>
                             <input type="text" id="bar-date" placeholder="例: 2026年4月1日 19:00頃">
                         </div>
                         <div class="form-group">
-                            <label>人数</label>
+                            <label>人数 <span class="label-optional">任意</span></label>
                             <input type="text" id="bar-guests" placeholder="例: 4名">
                         </div>
                     </div>
@@ -233,30 +257,30 @@ function renderContactModal() {
                     <!-- 飲食店用フィールド -->
                     <div id="fields-restaurant" style="display:none;">
                         <div class="form-group">
-                            <label>店舗責任者名</label>
+                            <label>店舗責任者名 <span class="label-optional">任意</span></label>
                             <input type="text" id="manager-name" placeholder="例: 佐藤太郎">
                         </div>
                         <div class="form-group">
-                            <label>店舗名</label>
+                            <label>店舗名 <span class="label-optional">任意</span></label>
                             <input type="text" id="shop-name" placeholder="例: ビストロ○○">
                         </div>
                         <div class="form-group">
-                            <label>店舗住所</label>
+                            <label>店舗住所 <span class="label-optional">任意</span></label>
                             <input type="text" id="shop-address" placeholder="例: 東京都新宿区○○ 1-2-3">
                         </div>
                     </div>
 
                     <!-- 共通フィールド -->
                     <div class="form-group">
-                        <label>希望日時</label>
+                        <label>希望日時 <span class="label-optional">任意</span></label>
                         <input type="text" id="date" placeholder="例: 2026年5月15日">
                     </div>
                     <div class="form-group">
-                        <label>参加人数</label>
+                        <label>参加人数 <span class="label-optional">任意</span></label>
                         <input type="text" id="guests" placeholder="例: 50名">
                     </div>
                     <div class="form-group">
-                        <label>ご要望・こだわり</label>
+                        <label>ご要望・こだわり <span class="label-optional">任意</span></label>
                         <textarea id="message" placeholder="具体的なご要望があればお書きください。決まっていなくても大丈夫です。"></textarea>
                     </div>
 
@@ -271,15 +295,15 @@ function renderContactModal() {
                     <h3>ご連絡先をご入力ください</h3>
                     <p>お見積もりやご返信に使用します。</p>
                     <div class="form-group">
-                        <label>お名前 <span class="required">必須</span></label>
+                        <label>お名前 <span class="label-required">必須</span></label>
                         <input type="text" id="name" placeholder="例: 大和太郎" required>
                     </div>
                     <div class="form-group">
-                        <label>メールアドレス <span class="required">必須</span></label>
+                        <label>メールアドレス <span class="label-required">必須</span></label>
                         <input type="email" id="email" placeholder="例: yamada@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label>電話番号</label>
+                        <label>電話番号 <span class="label-optional">任意</span></label>
                         <input type="tel" id="phone" placeholder="例: 090-1234-5678">
                     </div>
 

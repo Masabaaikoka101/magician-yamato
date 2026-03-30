@@ -60,4 +60,30 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('no-hero');
     }
 
+    // --- 桜の花びらエフェクト ---
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        const sakuraContainer = document.createElement('div');
+        sakuraContainer.className = 'sakura-container';
+        heroSection.appendChild(sakuraContainer);
+
+        const createSakura = () => {
+            const sakura = document.createElement('div');
+            sakura.className = 'sakura';
+            sakura.style.left = Math.random() * 100 + 'vw';
+            sakura.style.animationDuration = (Math.random() * 3 + 5) + 's, ' + (Math.random() * 2 + 2) + 's';
+            sakura.style.opacity = Math.random() * 0.5 + 0.3;
+            const size = Math.random() * 10 + 8;
+            sakura.style.width = size + 'px';
+            sakura.style.height = size + 'px';
+            sakuraContainer.appendChild(sakura);
+
+            setTimeout(() => {
+                sakura.remove();
+            }, 8000);
+        };
+
+        setInterval(createSakura, 300);
+    }
+
 });

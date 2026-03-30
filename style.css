@@ -5,29 +5,34 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  /* Colors - Warm Light Theme */
-  --color-bg: #faf9f7;
-  --color-bg-alt: #f3f1ed;
-  --color-bg-white: #ffffff;
-  --color-bg-dark: #1a1814;
-  --color-bg-dark-alt: #2a2620;
+  /* Colors - Night Sakura Luxury Theme */
+  --color-bg: #110e13;
+  --color-bg-alt: #1c151e;
+  --color-bg-white: #261e2a;
+  --color-bg-dark: #0a080c;
+  --color-bg-dark-alt: #151018;
 
-  /* Text */
-  --color-text: #2d2a26;
-  --color-text-secondary: #6b6560;
-  --color-text-tertiary: #9c9590;
-  --color-text-on-dark: #f0ece6;
-  --color-text-on-dark-secondary: #b8b0a4;
+  /* Text - Premium Platinum */
+  --color-text: #f4efeb;
+  --color-text-secondary: #c8bdbe;
+  --color-text-tertiary: #a09295;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-secondary: #e2d9db;
 
-  /* Accent - Amber/Gold */
-  --color-accent: #c8922a;
-  --color-accent-light: #daa94a;
-  --color-accent-dark: #a67620;
-  --color-accent-bg: #fdf6e9;
+  /* Accent - Sakura */
+  --color-accent: #e6a8bc;
+  --color-accent-light: #f7d4df;
+  --color-accent-dark: #c98299;
+  --color-accent-bg: #2d1f25;
+
+  /* Accent - Premium Gold */
+  --color-gold: #e2b763;
+  --color-gold-light: #fdf0c9;
+  --color-gold-dark: #b88636;
 
   /* Borders & Shadows */
-  --color-border: #e8e4de;
-  --color-border-light: #f0ece6;
+  --color-border: #3b2e35;
+  --color-border-light: #4a3a41;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
@@ -139,8 +144,9 @@ ol {
 }
 
 .text-highlight {
-  background: linear-gradient(transparent 60%, rgba(200, 146, 42, 0.2) 60%);
+  background: linear-gradient(transparent 60%, rgba(226, 183, 99, 0.25) 60%);
   font-weight: 700;
+  color: var(--color-gold-light);
 }
 
 /* --- Section --- */
@@ -182,7 +188,7 @@ ol {
 }
 
 .site-header.scrolled {
-  background-color: rgba(250, 249, 247, 0.95);
+  background-color: rgba(17, 14, 19, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
@@ -397,6 +403,14 @@ ol {
   letter-spacing: 0.08em;
   line-height: 1.2;
   margin-bottom: 20px;
+  padding-bottom: 0.15em; /* gなどの下部が切れないように描画領域を確保 */
+  /* Premium Gold Text Effect */
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 16px rgba(226, 183, 99, 0.25);
 }
 
 .hero-desc {
@@ -411,6 +425,38 @@ ol {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ======================================================
+   HERO CAMPAIGN BANNER
+   ====================================================== */
+.hero-campaign {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.hero-campaign:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05); /* ほんの少し明るくして押せる感を強調 */
+}
+
+.hero-campaign img {
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* 画面の端まで広げるため角丸をなくす */
+  box-shadow: 0 8px 30px rgba(226, 183, 99, 0.3);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-campaign {
+    margin-top: 28px;
+    /* widthとmargin設定は親クラスの全幅設定を引き継ぐため省略 */
+  }
 }
 
 /* ======================================================
@@ -866,8 +912,15 @@ ol {
   font-family: var(--font-serif);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-text-on-dark);
   margin-bottom: 12px;
+  padding-bottom: 0.15em; /* gなどの下部が切れないように描画領域を確保 */
+  /* Premium Gold Text Effect */
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 16px rgba(226, 183, 99, 0.25);
 }
 
 .page-hero p {
@@ -909,6 +962,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .plan-card-body {
@@ -1704,4 +1758,103 @@ body.has-hero {
 /* Pages without hero need padding for fixed header */
 body.no-hero {
   padding-top: 72px;
+}
+
+/* ======================================================
+   SAKURA ANIMATION & LUXURY STYLE
+   ====================================================== */
+.sakura-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sakura {
+  position: absolute;
+  background-color: var(--color-accent);
+  border-radius: 100% 0 100% 0; 
+  opacity: 0.8;
+  animation: sakura-fall linear infinite, sakura-sway ease-in-out infinite alternate;
+}
+
+@keyframes sakura-fall {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+@keyframes sakura-sway {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(30px) rotate(45deg); }
+}
+
+/* Form Required / Optional Labels */
+.label-required {
+  background-color: #d9486c; /* より目立つ鮮やかな赤紫系の色へ変更 */
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.label-optional {
+  background-color: transparent;
+  border: 1px solid var(--color-text-tertiary); /* 枠線のみに変更して控えめに */
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  padding: 1px 7px; /* 枠線(1px)の分、paddingを減らして大きさを揃える */
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Radio Button Group (Form UI) */
+.radio-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.radio-button-label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-button-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-button-text {
+  display: block;
+  padding: 12px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background-color: var(--color-bg-white);
+  color: var(--color-text);
+  font-weight: 500;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.radio-button-label input[type="radio"]:checked + .radio-button-text {
+  background-color: var(--color-accent);
+  color: var(--color-bg-dark);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(230, 168, 188, 0.3);
+}
+
+.radio-button-label:hover .radio-button-text {
+  border-color: var(--color-accent);
 }
