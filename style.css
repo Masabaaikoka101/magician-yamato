@@ -348,10 +348,9 @@ ol {
    ====================================================== */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
-  max-height: 900px;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -385,6 +384,7 @@ ol {
   text-align: center;
   color: #fff;
   padding: 0 24px;
+  flex-shrink: 0;
 }
 
 .hero-tagline {
@@ -431,31 +431,38 @@ ol {
    HERO CAMPAIGN BANNER
    ====================================================== */
 .hero-campaign {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
   transition: transform var(--transition), filter var(--transition);
 }
 
 .hero-campaign:hover {
   transform: translateY(-4px);
-  filter: brightness(1.05); /* ほんの少し明るくして押せる感を強調 */
+  filter: brightness(1.05);
 }
 
 .hero-campaign img {
   width: 100%;
   height: auto;
-  border-radius: 0; /* 画面の端まで広げるため角丸をなくす */
-  box-shadow: 0 8px 30px rgba(226, 183, 99, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(226, 183, 99, 0.4);
   display: block;
 }
 
 @media (max-width: 768px) {
   .hero-campaign {
-    margin-top: 28px;
-    /* widthとmargin設定は親クラスの全幅設定を引き継ぐため省略 */
+    width: 100%;
+    max-width: none;
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+  .hero-campaign img {
+    border-radius: 0;
   }
 }
 
@@ -1615,7 +1622,9 @@ body.modal-open {
   }
 
   .hero {
-    min-height: 500px;
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 0;
   }
 
   .hero-title {
