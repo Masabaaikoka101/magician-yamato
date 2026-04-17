@@ -130,7 +130,7 @@ function renderStickyCta() {
   const ctaHtml = `
     <div class="sticky-cta" id="sticky-cta">
       <div style="display: flex; gap: 8px; justify-content: center;">
-        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">かんたん相談</button>
+        <button type="button" class="btn btn-primary" onclick="openContactModal()" style="padding: 12px 20px; font-size: 0.9rem;">お問い合わせ</button>
         <a href="https://line.me/R/ti/p/@344pyyvy?ts=02022038&oat_content=url" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="padding: 12px 20px; font-size: 0.9rem;">
             <img src="images/sns/line.png" alt="" aria-hidden="true" style="margin-right: 6px; width: 18px; height: 18px;">LINE
         </a>
@@ -159,10 +159,32 @@ function renderContactModal() {
                     <div class="step-dot"></div>
                 </div>
 
-                <!-- Step 1: サービス選択 -->
+                <!-- Step 1: 連絡先入力 -->
                 <div class="form-step active" id="step-1">
+                    <h3>ご連絡先をご入力ください</h3>
+                    <p>まずはご連絡先をご入力ください。</p>
+                    <div class="form-group">
+                        <label>お名前 <span class="label-required">必須</span></label>
+                        <input type="text" id="name" placeholder="例: 大和太郎" required>
+                    </div>
+                    <div class="form-group">
+                        <label>メールアドレス <span class="label-required">必須</span></label>
+                        <input type="email" id="email" placeholder="例: yamada@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>電話番号 <span class="label-optional">任意</span></label>
+                        <input type="tel" id="phone" placeholder="例: 090-1234-5678">
+                    </div>
+                    <div class="form-actions">
+                        <div></div>
+                        <button type="button" class="btn btn-primary" id="btn-next-1">次へ</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: サービス選択 -->
+                <div class="form-step" id="step-2">
                     <h3>ご利用サービスを選択してください</h3>
-                    <p>まずはご希望のサービスをお選びください。</p>
+                    <p>ご希望のサービスをお選びください。</p>
                     <div class="selection-cards">
                         <label class="selection-card">
                             <input type="radio" name="service" value="余興・イベント">
@@ -178,20 +200,20 @@ function renderContactModal() {
                         </label>
                     </div>
                     <div class="form-actions">
-                        <div></div>
-                        <button type="button" class="btn btn-primary" id="btn-next-1" disabled>次へ</button>
+                        <button type="button" class="btn btn-outline-dark" id="btn-back-2">戻る</button>
+                        <button type="button" class="btn btn-primary" id="btn-next-2" disabled>次へ</button>
                     </div>
                 </div>
 
-                <!-- Step 2: 詳細入力 -->
-                <div class="form-step" id="step-2">
+                <!-- Step 3: 詳細入力 -->
+                <div class="form-step" id="step-3">
                     <h3>詳細をお聞かせください</h3>
                     <p>可能な範囲でご記入ください。</p>
 
                     <!-- 余興・イベント用フィールド -->
                     <div id="fields-event" style="display:none;">
                         <div class="form-group">
-                            <label>プラン <span class="label-optional">任意</span></label>
+                            <label>プラン <span class="label-required">必須</span></label>
                             <div class="radio-button-group" id="plan">
                                 <label class="radio-button-label">
                                     <input type="radio" name="plan" value="テーブルマジック">
@@ -216,7 +238,7 @@ function renderContactModal() {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>シチュエーション <span class="label-optional">任意</span></label>
+                            <label>シチュエーション <span class="label-required">必須</span></label>
                             <div class="radio-button-group" id="situation">
                                 <label class="radio-button-label">
                                     <input type="radio" name="situation" value="企業イベント">
@@ -282,29 +304,6 @@ function renderContactModal() {
                     <div class="form-group">
                         <label>ご要望・こだわり <span class="label-optional">任意</span></label>
                         <textarea id="message" placeholder="具体的なご要望があればお書きください。決まっていなくても大丈夫です。"></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-outline-dark" id="btn-back-2">戻る</button>
-                        <button type="button" class="btn btn-primary" id="btn-next-2">次へ</button>
-                    </div>
-                </div>
-
-                <!-- Step 3: 連絡先入力 -->
-                <div class="form-step" id="step-3">
-                    <h3>ご連絡先をご入力ください</h3>
-                    <p>お見積もりやご返信に使用します。</p>
-                    <div class="form-group">
-                        <label>お名前 <span class="label-required">必須</span></label>
-                        <input type="text" id="name" placeholder="例: 大和太郎" required>
-                    </div>
-                    <div class="form-group">
-                        <label>メールアドレス <span class="label-required">必須</span></label>
-                        <input type="email" id="email" placeholder="例: yamada@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>電話番号 <span class="label-optional">任意</span></label>
-                        <input type="tel" id="phone" placeholder="例: 090-1234-5678">
                     </div>
 
                     <div class="form-actions">

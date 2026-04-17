@@ -44,16 +44,16 @@ function initContactForm() {
         });
     }
 
-    // --- Step 1: サービス選択（イベント委譲） ---
+    // --- Step 2: サービス選択（イベント委譲） ---
     document.addEventListener('change', (e) => {
         if (e.target.matches('input[name="service"]')) {
             selectedService = e.target.value;
-            const btnNext1Local = document.getElementById('btn-next-1');
-            if (btnNext1Local) btnNext1Local.disabled = false;
+            const btnNext2Local = document.getElementById('btn-next-2');
+            if (btnNext2Local) btnNext2Local.disabled = false;
 
-            // 選択後すぐにStep2へ自動遷移
-            const btnNext1 = document.getElementById('btn-next-1');
-            if (btnNext1) btnNext1.click();
+            // 選択後すぐにStep3へ自動遷移
+            const btnNext2 = document.getElementById('btn-next-2');
+            if (btnNext2) btnNext2.click();
         }
     });
 
@@ -63,6 +63,22 @@ function initContactForm() {
 
         // Step 1 -> 2
         if (targetId === 'btn-next-1') {
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            
+            if (nameEl && emailEl) {
+                const name = nameEl.value.trim();
+                const email = emailEl.value.trim();
+                if (!name || !email) {
+                    alert('お名前とメールアドレスは必須項目です。ご入力をお願いいたします。');
+                    return;
+                }
+            }
+            goToStep(2);
+        }
+
+        // Step 2 -> 3
+        if (targetId === 'btn-next-2') {
             const fieldsEvent = document.getElementById('fields-event');
             const fieldsBar = document.getElementById('fields-bar');
             const fieldsRestaurant = document.getElementById('fields-restaurant');
@@ -84,30 +100,43 @@ function initContactForm() {
                     guestsFieldGroup.style.display = 'block';
                 }
             }
-            goToStep(2);
+            goToStep(3);
         }
 
-        // Step 2 -> 1, Step 2 -> 3
+        // Step 2 -> 1, Step 3 -> 2
         if (targetId === 'btn-back-2') goToStep(1);
-        if (targetId === 'btn-next-2') goToStep(3);
-
-        // Step 3 -> 2
         if (targetId === 'btn-back-3') goToStep(2);
 
         // 送信処理
         if (targetId === 'btn-submit') {
             const nameEl = document.getElementById('name');
             const emailEl = document.getElementById('email');
-
-            if (!nameEl || !emailEl) return;
-
-            const name = nameEl.value.trim();
-            const email = emailEl.value.trim();
+            const name = nameEl ? nameEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
 
             // バリデーション
             if (!name || !email) {
-                alert('お名前とメールアドレスは必須です。');
+                alert('お名前とメールアドレスをご入力ください。');
                 return;
+            }
+
+            let plan = '';
+            let situation = '';
+
+            if (selectedService === '余興・イベント') {
+                const checkedPlan = document.querySelector('input[name="plan"]:checked');
+                const checkedSituation = document.querySelector('input[name="situation"]:checked');
+
+                if (!checkedPlan) {
+                    alert('プランをご選択ください（必須）。');
+                    return;
+                }
+                if (!checkedSituation) {
+                    alert('シチュエーションをご選択ください（必須）。');
+                    return;
+                }
+                plan = checkedPlan.value;
+                situation = checkedSituation.value;
             }
 
             // 送信中の状態
@@ -126,8 +155,8 @@ function initContactForm() {
 
             // サービス別データ
             if (selectedService === '余興・イベント') {
-                formData.plan = document.querySelector('input[name="plan"]:checked')?.value || document.getElementById('plan')?.value || '';
-                formData.situation = document.querySelector('input[name="situation"]:checked')?.value || document.getElementById('situation')?.value || '';
+                formData.plan = plan;
+                formData.situation = situation;
                 formData.budget = document.getElementById('budget')?.value.trim() || '';
                 formData.date = document.getElementById('date')?.value.trim() || '';
                 formData.guests = document.getElementById('guests')?.value.trim() || '';
