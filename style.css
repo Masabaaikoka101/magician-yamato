@@ -427,48 +427,7 @@ ol {
   flex-wrap: wrap;
 }
 
-/* ======================================================
-   HERO CAMPAIGN BANNER
-   ====================================================== */
-.hero-campaign {
-  position: relative;
-  z-index: 2;
-  width: 90%;
-  max-width: 800px;
-  margin-top: 32px;
-  margin-bottom: 24px;
-  flex-shrink: 0;
-  transition: transform var(--transition), filter var(--transition);
-}
 
-.hero-campaign:hover {
-  transform: translateY(-4px);
-  filter: brightness(1.05);
-}
-
-.hero-campaign img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(226, 183, 99, 0.4);
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hero-campaign {
-    width: 100%;
-    max-width: none;
-    margin-top: 24px;
-    margin-bottom: 0;
-  }
-  .hero-campaign img {
-    border-radius: 0;
-  }
-}
-
-/* ======================================================
-   BUTTONS
-   ====================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
